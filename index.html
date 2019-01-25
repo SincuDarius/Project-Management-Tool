@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Plain JavaScript To-Do List with LocalStorage</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+  <h1>Project Management Tool</h1>
+  <h2>Track all the work made by your team</h2>
+
+  <div class="container">
+
+    <form action="#">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label for="type">Type</label>
+          <select name="type" id="type">
+            <option value="FEATURES">Features</option>
+            <option value="BUGS">Bugs</option>
+            <option value="TASKS">Tasks</option>
+          </select>
+        </div>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Add New" />
+        <label for="item">Status</label>
+        <select id="status">
+          <option value="New">New</option>
+          <!-- All newly created issues will have the status New. -->
+          <option value="In Progres" disabled="disabled">In Progres</option>
+          <option value="Feedback" disabled="disabled">Feedback</option>
+          <option value="Rework" disabled="disabled">Rework</option>
+          <option value="Resolved" disabled="disabled">Resolved</option>
+          <option value="Ready for Testing" disabled="disabled">Ready for Testing</option>
+        </select>
+        <button name="submitButton">ok</button>
+      </div>
+      <textarea name="comments" id="comments" class="form-control" placeholder="Comments"></textarea>
+    </form>
+    <div class="card" style="width: 18rem;">
+      <div class="card-header" style="display:-webkit-inline-flex">
+        Number of Issue: <p id="itemLength"></p>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Comments</th>     
+        </tr>
+      </thead>
+      <tbody id="itemsList">
+      </tbody>
+    </table>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
